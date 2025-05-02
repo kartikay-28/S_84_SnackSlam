@@ -16,16 +16,24 @@ const SnackList = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Fetch snacks (MongoDB)
+                // Fetch MongoDB snacks
                 const snackResponse = await axios.get("https://s-84-snackslam.onrender.com/api/snacks");
-                setSnacks(snackResponse.data);
-                setFilteredSnacks(snackResponse.data);
-
-                // Extract unique creators (MongoDB)
-                const uniqueCreators = [...new Set(snackResponse.data.map(snack => snack.created_by).filter(Boolean))];
+                const mongoSnacks = snackResponse.data;
+        
+                // Fetch MySQL snacks
+                const sqlResponse = await axios.get("https://s-84-snackslam.onrender.com/api/sql/by-user"); // no userId param = all
+                const sqlSnacks = sqlResponse.data;
+        
+                const combined = [...mongoSnacks, ...sqlSnacks];
+        
+                setSnacks(combined);
+                setFilteredSnacks(combined);
+        
+                // MongoDB creators
+                const uniqueCreators = [...new Set(mongoSnacks.map(snack => snack.created_by).filter(Boolean))];
                 setCreators(uniqueCreators);
-
-                // Fetch users from MySQL
+        
+                // MySQL users
                 const userResponse = await axios.get("https://s-84-snackslam.onrender.com/api/sql/users");
                 setUsers(userResponse.data);
             } catch (error) {
@@ -35,7 +43,6 @@ const SnackList = () => {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 

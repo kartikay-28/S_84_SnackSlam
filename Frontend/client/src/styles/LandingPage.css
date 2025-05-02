@@ -132,153 +132,156 @@
   
  /* Trending Snacks Section */
 .trending-snacks {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 4rem 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    margin: 3rem 0;
-    backdrop-filter: blur(10px);
-  }
-  
-  .snack-list {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-  }
-  
-  .snack-card {
-    background: linear-gradient(135deg, #ff5252, #ff7675);
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    min-width: 250px;
-    flex: 0 0 auto;
-  }
-  
-  .snack-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 3px solid rgba(255, 107, 107, 0.3);
-  }
-  
-  .snack-card h3 {
-    font-size: 1.4rem;
-    margin: 1rem 0;
-    color: #2d3436;
-  }
-  
-  .snack-card p {
-    color: #57606f;
-    font-size: 1rem;
-    padding: 0 1rem 1rem;
-  }
-  
-  .snack-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
-  }
-  .snack-card-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 4rem 0;
+  backdrop-filter: blur(10px);
+}
+
+.snack-list {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
 }
 
 .snack-card {
-    background-color: #f5e1da; /* Soft warm tone to match theme */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 15px;
-    text-align: center;
-    width: 220px;
-    transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #ff5252, #ff7675);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-width: 270px;
+  flex: 0 0 auto;
+  max-width: 280px;
 }
 
 .snack-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid rgba(255, 107, 107, 0.3);
+}
+
+.snack-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  color: #e65100;
+  padding: 0 1rem;
+}
+
+.snack-card p {
+  color: #5d4037;
+  font-size: 1rem;
+  padding: 0 1rem 1rem;
+  line-height: 1.5;
 }
 
 .snack-card:hover {
-    transform: scale(1.05);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
 }
 
-.get-snack-button {
-    background-color: #ff6f61; /* Vibrant coral shade for a bold look */
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+/* Grid Section */
+.snack-card-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0 2rem;
 }
 
-.get-snack-button:hover {
-    background-color: #e85b50; /* Slightly darker coral on hover */
-    transform: scale(1.05); /* Subtle zoom effect */
+/* Backend Snack Cards */
+.snack-card-grid .snack-card {
+  background-color: #f5e1da;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  text-align: left;
+  width: 300px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.get-snack-button:active {
-    transform: scale(0.98); /* Slight press effect */
+.snack-card-grid .snack-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.get-snack-data-button{
-  background-color: #ff6f61; /* Vibrant coral shade for a bold look */
+.snack-card-grid .snack-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #e65100;
+}
+
+.snack-card-grid .snack-card p {
+  font-size: 1rem;
+  color: #5d4037;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.get-snack-button,
+.get-snack-data-button {
+  background-color: #ff6f61;
   color: #fff;
   border: none;
   border-radius: 30px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 25px;
 }
 
+.get-snack-button:hover,
 .get-snack-data-button:hover {
-  background-color: #e85b50; /* Slightly darker coral on hover */
-  transform: scale(1.05); /* Subtle zoom effect */
+  background-color: #e85b50;
+  transform: scale(1.05);
 }
 
+.get-snack-button:active,
 .get-snack-data-button:active {
-  transform: scale(0.98); /* Slight press effect */
+  transform: scale(0.98);
 }
 
+/* Backend Snack Section */
 .backend-snacks {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  padding: 3rem 1rem;
+  padding: 4rem 1.5rem;
 }
 
 .backend-snacks h2 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   color: #fff;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(255, 71, 87, 0.8);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(255, 71, 87, 0.85);
 }
 
 .backend-snacks p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #ffeded;
-  max-width: 600px;
-  line-height: 1.6;
+  max-width: 640px;
+  line-height: 1.7;
 }
+
 
   /* Logout Button */
   .logout-btn {

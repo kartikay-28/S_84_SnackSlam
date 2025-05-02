@@ -30,7 +30,7 @@ useEffect(() => {
       return;
     }
 
-    const response = await axios.get("http://localhost:3000/api/auth/check-auth", {
+    const response = await axios.get("https://s-84-snackslam.onrender.com/api/auth/check-auth", {
       headers: { Authorization: `Bearer ${token}` },
       withCredentials: true, // Ensure cookies are sent if needed
     });
@@ -49,7 +49,7 @@ useEffect(() => {
 const handleLogin = async () => {
   try {
       const response = await axios.post(
-          "http://localhost:3000/api/auth/login",
+          "https://s-84-snackslam.onrender.com/api/auth/login",
           { username },
           { withCredentials: true }
       );
@@ -63,7 +63,7 @@ const handleLogin = async () => {
 
 const handleLogout = async () => {
   try {
-      await axios.post("http://localhost:3000/api/auth/logout", {}, { withCredentials: true });
+      await axios.post("https://s-84-snackslam.onrender.com/api/auth/logout", {}, { withCredentials: true });
       setIsLoggedIn(false);
       setUsername("");
   } catch (error) {
