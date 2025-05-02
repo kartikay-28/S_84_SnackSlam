@@ -2,7 +2,8 @@
 
 ## Deployment Links
 
-- **Backend (Render):** [SnackSlam Backend](https://s-84-snackslam.onrender.com)  
+- **Backend (Render):** [SnackSlam Backend](https://s-84-snackslam.onrender.com)
+- To use the site you can use these usernames const users = ["John", "Alice", "Bob", "Kartikay", "Diven", "Aryaman", "Akshit", "Thakoor", "Rishi", "Chris", "Krish"];   
 - **Frontend (Netlify):** [SnackSlam Frontend](https://asap-snackslam.netlify.app)  
 
 ## 🌎 Project Overview
